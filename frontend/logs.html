@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureLog - Log History</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="logs-page">
+
+
+<header class="top-bar">
+    <button class="nav-btn back-btn" onclick="window.location.href='index.html'">
+        <span class="arrow">←</span>
+        Back to Dashboard
+    </button>
+
+    <h1>Log History</h1>
+</header>
+
+<main class="page-container">
+    <section class="card logs-card">
+        <div class="card-header">
+            <h2>Log History</h2>
+            <span class="subtext">All ingested system logs</span>
+        </div>
+
+        <div class="filter-bar">
+            <label for="sourceFilter">Source:</label>
+            <select id="sourceFilter">
+                <option value="all">All</option>
+                <option value="usb">USB</option>
+                <option value="system">System</option>
+                <option value="browser">Browser</option>
+                <option value="application">Application</option>
+            </select>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Source</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody id="logs-table"></tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage">Next</button>
+        </div>
+    </section>
+</main>
+
+
+
+<div id="logModal" class="log-modal hidden">
+    <div class="log-modal-content">
+
+        <div class="log-modal-header">
+            <div class="modal-title">
+                <h3>Log Details</h3>
+                <div class="modal-meta">
+                    <span id="modalSource" class="meta-badge"></span>
+                    <span id="modalType"></span>
+                    <span id="modalCategory" class="meta-badge"></span>
+                    <span class="meta-sep">•</span>
+                    <span id="modalTime"></span>
+                </div>
+            </div>
+            <button id="closeLogModal">&times;</button>
+        </div>
+
+        <div class="log-modal-body">
+            <pre id="logModalContent"></pre>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/logs.js"></script>
+
+</body>
+</html>

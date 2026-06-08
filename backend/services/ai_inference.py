@@ -16,15 +16,15 @@ def classify_log(text: str) -> Dict:
         
     text_lower = text.lower()
     
-    if any(word in text_lower for word in ["scam", "phishing", "malware", "attack"]):
+    if any(word in text_lower for word in ["scam", "phishing", "malware", "attack", 'leetcode']):
         classification = "malicious"
         confidence = round(random.uniform(0.90, 0.99), 2)
         risk_level = "high"
 
-    elif any(word in text_lower for word in ["ads", "tracking", "popup"]):
+    elif any(word in text_lower for word in ["ads", "tracking", "popup", 'steam', 'game', 'spotify', 'instagram']):
         classification = "useless"
         confidence = round(random.uniform(0.80, 0.90), 2)
-        risk_level = "low"
+        risk_level = "useless"
 
     else:
         classification = "genuine"

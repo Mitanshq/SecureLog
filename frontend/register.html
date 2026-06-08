@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SecureLog Register</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #16a34a;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #15803d;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.footer a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>📝 Register</h2>
+
+
+<input type="text" id="username" placeholder="Username">
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<input type="password" id="password-cnf" placeholder="Confirm Password">
+
+<button onclick="register()">Register</button>
+<div class="error" id="error"></div>
+<div id="message" class="message"></div>
+
+<div class="footer">
+    Already have an account? <a href="login.html">Login</a>
+</div>
+
+</div>
+
+<script>
+function register(){
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const cnf_password = document.getElementById("password-cnf").value;
+    
+    const e1 = document.getElementById("error");
+
+    if (password != cnf_password){
+        e1.innerText = "Password do not match";
+        return;
+    }
+
+    e1.innerText = "";
+
+
+    const msg = document.getElementById("message");
+
+    // Basic validation
+    if(!username || !email || !password){
+        msg.className = "error";
+        msg.innerText = "All fields are required";
+        return;
+    }
+
+    fetch("http://127.0.0.1:8000/api/auth/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        msg.className = "success";
+        msg.innerText = "Registered successfully! Redirecting...";
+        
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
+    })
+    .catch(() => {
+        msg.className = "error";
+        msg.innerText = "Server error";
+    });
+}
+</script>
+
+</body>
+</html>

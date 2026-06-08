@@ -4,13 +4,15 @@ from backend.databases.db import SessionLocal
 from backend.models.log_models import RawLog
 from backend.models.classified_log_models import ClassifiedLog
 from backend.services.ai_inference import classify_log
+from backend.services.alert_service import generate_alert_if_needed
+
 
 def normalize_text(text: str):
     if not text:
         return ""
     return text.lower().strip()
 
-def process_raw_logs(batch_size: int = 100):
+def process_raw_logs(batch_size: int = 1000):
     db : Session = SessionLocal()
     try:
         raw_logs = (
@@ -42,6 +44,10 @@ def process_raw_logs(batch_size: int = 100):
             )
             
             db.add(classified)
+            db.flush()
+            
+            generate_alert_if_needed(db, classified)
+            
             raw.processed = True
         db.commit()
     

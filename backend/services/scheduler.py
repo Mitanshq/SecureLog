@@ -4,7 +4,7 @@ import threading
 from backend.services.log_processor import process_raw_logs
 
 class LogProcessingScheduler:
-    def __init__(self, interval_seconds: int = 10, batch_size: int = 100):
+    def __init__(self, interval_seconds: int = 10, batch_size: int = 1000):
         self.interval_seconds = interval_seconds
         self.batch_size = batch_size
         self._stop_event = threading.Event()

@@ -6,18 +6,18 @@ from backend.databases.db import Base
 # ADMIN USER TABLE
 # ==========================
 
-class AdminUser(Base):
-    __tablename__ = "admin_users"
+# class AdminUser(Base):
+#     __tablename__ = "admin_users"
     
-    id = Column(Integer, primary_key=True, index=True)
-    Username = Column(String(50), unique=True, nullable=False)
-    password_hash = Column(String(255), nullable=False)
-    role = Column(String(20), default='admin')
-    is_active = Column(Boolean, default=True)
+#     id = Column(Integer, primary_key=True, index=True)
+#     Username = Column(String(50), unique=True, nullable=False)
+#     password_hash = Column(String(255), nullable=False)
+#     role = Column(String(20), default='admin')
+#     is_active = Column(Boolean, default=True)
+#     user_id = Column(Integer)
+#     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-    
-# ==========================
+# # ==========================
 # AGENT PC TABLE
 # ==========================
 

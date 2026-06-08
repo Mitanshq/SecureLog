@@ -8,6 +8,27 @@ from backend.databases.db import get_db
 from backend.models.core_models import AgentPC
 from backend.models.log_models import RawLog
 
+def normalize_source(source: str | None) -> str:
+    if not source:
+        return "unknown"
+
+    s = source.strip().lower()
+
+    # Fix known typos / aliases
+    if s in ("aplication", "application"):
+        return "application"
+
+    if s in ("system",):
+        return "system"
+
+    if s in ("usb",):
+        return "usb"
+
+    if s in ("browser",):
+        return "browser"
+
+    return s
+
 
 router = APIRouter()
 
@@ -37,11 +58,12 @@ def ingest_logs(data: dict, db: Session = Depends(get_db)):
                 
         raw_log = RawLog(
             pc_id=pc_id,
-            source=log.get("source"),
+            source=normalize_source(log.get("source")),
             log_type=log.get("type"),
             content=log.get("content"),
             timestamp=parsed_ts
         )
+
         raw_log_objects.append(raw_log)
 
     db.bulk_save_objects(raw_log_objects)
