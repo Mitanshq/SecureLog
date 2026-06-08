@@ -22,6 +22,7 @@ Educational Institutions
 
 in identifying potential threats hidden inside large volumes of log data.
 
+
 🎯 Problem Statement
 
 Modern systems generate thousands of log entries every day.
@@ -36,6 +37,7 @@ Manually reviewing these logs is:
 
 ❌ Difficult to scale
 
+
 SecureLog solves this problem by automatically:
 
 Processing logs
@@ -43,18 +45,24 @@ Detecting malicious patterns
 Identifying anomalies
 Generating threat reports
 Providing real-time insights
+
+
 ✨ Key Features
 🔍 Log Analysis
 Upload log files (.txt, .log)
 Automatic preprocessing
 Feature extraction
 Pattern recognition
+
+
 🤖 AI-Powered Threat Detection
 TF-IDF Vectorization
 Linear SVM Classification
 Random Forest Classification
 Ensemble Learning
 Threat Prediction
+
+
 🚨 Anomaly Detection
 
 Detect:
@@ -65,17 +73,23 @@ Malware indicators
 Unauthorized access attempts
 Command injection patterns
 Abnormal user activities
+
+
 📊 Interactive Dashboard
 Threat statistics
 Detection summaries
 Security analytics
 Visual reports
 Real-time monitoring
+
+
 👥 User Management
 Secure Authentication
 Login & Registration
 Session Management
 Role-Based Access
+
+
 📑 Report Generation
 
 Generate:
@@ -90,27 +104,34 @@ Analysis Reports
 
 
 ⚙️ Installation
-1. Clone Repository
+1. Clone Repository: 
 git clone https://github.com/YOUR_USERNAME/SecureLog.git
 
 cd SecureLog
-2. Create Virtual Environment
+2. Create Virtual Environment: 
 python -m venv venv
 
 Activate:
 
-Windows
+Windows:
 venv\Scripts\activate
-Linux / Mac
+
+Linux / Mac:
 source venv/bin/activate
-3. Install Dependencies
+
+3. Install Dependencies:
 pip install -r requirements.txt
-4. Train Model
+
+5. Train Model:
 python train_model.py
-5. Run Application
+
+7. Run Application:
 python app.py
-6. Open Browser
+
+9. Open Browser:
 http://127.0.0.1:5000
+
+
 📈 Dataset
 
 The model is trained on:
