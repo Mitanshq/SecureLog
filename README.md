@@ -41,26 +41,40 @@ Manually reviewing these logs is:
 SecureLog solves this problem by automatically:
 
 Processing logs
+
 Detecting malicious patterns
+
 Identifying anomalies
+
 Generating threat reports
+
 Providing real-time insights
 
 
 ✨ Key Features
 🔍 Log Analysis
+
 Upload log files (.txt, .log)
+
 Automatic preprocessing
+
 Feature extraction
+
 Pattern recognition
 
 
 🤖 AI-Powered Threat Detection
+
 TF-IDF Vectorization
+
 Linear SVM Classification
+
 Random Forest Classification
+
 Ensemble Learning
+
 Threat Prediction
+
 
 
 🚨 Anomaly Detection
@@ -68,25 +82,39 @@ Threat Prediction
 Detect:
 
 Suspicious PowerShell commands
+
 Credential dumping attempts
+
 Malware indicators
+
 Unauthorized access attempts
+
 Command injection patterns
+
 Abnormal user activities
 
 
 📊 Interactive Dashboard
+
 Threat statistics
+
 Detection summaries
+
 Security analytics
+
 Visual reports
+
 Real-time monitoring
 
 
 👥 User Management
+
 Secure Authentication
+
 Login & Registration
+
 Session Management
+
 Role-Based Access
 
 
@@ -95,9 +123,13 @@ Role-Based Access
 Generate:
 
 Security Reports
+
 Threat Summaries
+
 Incident Logs
+
 Analysis Reports
+
 
 🏗️ System Architecture
 <img width="4057" height="327" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/f203f5e9-ebb9-4a40-89d4-9ba8a3242cb9" />
@@ -108,6 +140,7 @@ Analysis Reports
 git clone https://github.com/YOUR_USERNAME/SecureLog.git
 
 cd SecureLog
+
 2. Create Virtual Environment: 
 python -m venv venv
 
@@ -137,28 +170,48 @@ http://127.0.0.1:5000
 The model is trained on:
 
 Genuine System Logs
+
 Malicious Logs
+
 PowerShell Attack Logs
+
 Credential Dumping Logs
+
 Malware Execution Logs
+
 Security Event Logs
+
 
 Dataset Categories:
 
 Category	Label
+
 Genuine Logs	0
+
 Malicious Logs	1
+
 🔬 Technologies Used
+
 Technology	Purpose
+
 Python	Backend
+
 Flask	Web Framework
+
 SQLite	Database
+
 Scikit-Learn	Machine Learning
+
 Pandas	Data Processing
+
 NumPy	Numerical Computing
+
 HTML/CSS	Frontend
+
 JavaScript	Interactivity
+
 Chart.js	Data Visualization
+
 
 📊 Threat Detection Flow
 <img width="1700" height="1198" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/fc6cf752-1d91-4133-a727-75070b5ef450" />
